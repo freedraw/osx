@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1BCBC1D1ABE24FD001A592D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCBC1C1ABE24FD001A592D /* AppDelegate.swift */; };
+		A1BCBC1F1ABE24FD001A592D /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCBC1E1ABE24FD001A592D /* Document.swift */; };
+		A1BCBC221ABE24FD001A592D /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BCBC201ABE24FD001A592D /* Document.xib */; };
+		A1BCBC241ABE24FD001A592D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1BCBC231ABE24FD001A592D /* Images.xcassets */; };
+		A1BCBC271ABE24FD001A592D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BCBC251ABE24FD001A592D /* MainMenu.xib */; };
+		A1BCBC331ABE24FD001A592D /* FreedrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCBC321ABE24FD001A592D /* FreedrawTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1BCBC2D1ABE24FD001A592D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1BCBC0F1ABE24FC001A592D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1BCBC161ABE24FD001A592D;
+			remoteInfo = Freedraw;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A1BCBC171ABE24FD001A592D /* Freedraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freedraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1BCBC1B1ABE24FD001A592D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1BCBC1C1ABE24FD001A592D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1BCBC1E1ABE24FD001A592D /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		A1BCBC211ABE24FD001A592D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		A1BCBC231ABE24FD001A592D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A1BCBC261ABE24FD001A592D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A1BCBC2C1ABE24FD001A592D /* FreedrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreedrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1BCBC311ABE24FD001A592D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1BCBC321ABE24FD001A592D /* FreedrawTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreedrawTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1BCBC141ABE24FD001A592D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1BCBC291ABE24FD001A592D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1BCBC0E1ABE24FC001A592D = {
+			isa = PBXGroup;
+			children = (
+				A1BCBC191ABE24FD001A592D /* Freedraw */,
+				A1BCBC2F1ABE24FD001A592D /* FreedrawTests */,
+				A1BCBC181ABE24FD001A592D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1BCBC181ABE24FD001A592D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1BCBC171ABE24FD001A592D /* Freedraw.app */,
+				A1BCBC2C1ABE24FD001A592D /* FreedrawTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1BCBC191ABE24FD001A592D /* Freedraw */ = {
+			isa = PBXGroup;
+			children = (
+				A1BCBC1C1ABE24FD001A592D /* AppDelegate.swift */,
+				A1BCBC1E1ABE24FD001A592D /* Document.swift */,
+				A1BCBC201ABE24FD001A592D /* Document.xib */,
+				A1BCBC231ABE24FD001A592D /* Images.xcassets */,
+				A1BCBC251ABE24FD001A592D /* MainMenu.xib */,
+				A1BCBC1A1ABE24FD001A592D /* Supporting Files */,
+			);
+			path = Freedraw;
+			sourceTree = "<group>";
+		};
+		A1BCBC1A1ABE24FD001A592D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1BCBC1B1ABE24FD001A592D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1BCBC2F1ABE24FD001A592D /* FreedrawTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1BCBC321ABE24FD001A592D /* FreedrawTests.swift */,
+				A1BCBC301ABE24FD001A592D /* Supporting Files */,
+			);
+			path = FreedrawTests;
+			sourceTree = "<group>";
+		};
+		A1BCBC301ABE24FD001A592D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1BCBC311ABE24FD001A592D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1BCBC161ABE24FD001A592D /* Freedraw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1BCBC361ABE24FD001A592D /* Build configuration list for PBXNativeTarget "Freedraw" */;
+			buildPhases = (
+				A1BCBC131ABE24FD001A592D /* Sources */,
+				A1BCBC141ABE24FD001A592D /* Frameworks */,
+				A1BCBC151ABE24FD001A592D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Freedraw;
+			productName = Freedraw;
+			productReference = A1BCBC171ABE24FD001A592D /* Freedraw.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1BCBC2B1ABE24FD001A592D /* FreedrawTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1BCBC391ABE24FD001A592D /* Build configuration list for PBXNativeTarget "FreedrawTests" */;
+			buildPhases = (
+				A1BCBC281ABE24FD001A592D /* Sources */,
+				A1BCBC291ABE24FD001A592D /* Frameworks */,
+				A1BCBC2A1ABE24FD001A592D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1BCBC2E1ABE24FD001A592D /* PBXTargetDependency */,
+			);
+			name = FreedrawTests;
+			productName = FreedrawTests;
+			productReference = A1BCBC2C1ABE24FD001A592D /* FreedrawTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1BCBC0F1ABE24FC001A592D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Nathan Dinsmore";
+				TargetAttributes = {
+					A1BCBC161ABE24FD001A592D = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					A1BCBC2B1ABE24FD001A592D = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = A1BCBC161ABE24FD001A592D;
+					};
+				};
+			};
+			buildConfigurationList = A1BCBC121ABE24FC001A592D /* Build configuration list for PBXProject "Freedraw" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1BCBC0E1ABE24FC001A592D;
+			productRefGroup = A1BCBC181ABE24FD001A592D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1BCBC161ABE24FD001A592D /* Freedraw */,
+				A1BCBC2B1ABE24FD001A592D /* FreedrawTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1BCBC151ABE24FD001A592D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1BCBC221ABE24FD001A592D /* Document.xib in Resources */,
+				A1BCBC241ABE24FD001A592D /* Images.xcassets in Resources */,
+				A1BCBC271ABE24FD001A592D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1BCBC2A1ABE24FD001A592D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1BCBC131ABE24FD001A592D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1BCBC1F1ABE24FD001A592D /* Document.swift in Sources */,
+				A1BCBC1D1ABE24FD001A592D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1BCBC281ABE24FD001A592D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1BCBC331ABE24FD001A592D /* FreedrawTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1BCBC2E1ABE24FD001A592D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1BCBC161ABE24FD001A592D /* Freedraw */;
+			targetProxy = A1BCBC2D1ABE24FD001A592D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A1BCBC201ABE24FD001A592D /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1BCBC211ABE24FD001A592D /* Base */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		A1BCBC251ABE24FD001A592D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1BCBC261ABE24FD001A592D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1BCBC341ABE24FD001A592D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1BCBC351ABE24FD001A592D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A1BCBC371ABE24FD001A592D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Freedraw/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A1BCBC381ABE24FD001A592D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Freedraw/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A1BCBC3A1ABE24FD001A592D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FreedrawTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Freedraw.app/Contents/MacOS/Freedraw";
+			};
+			name = Debug;
+		};
+		A1BCBC3B1ABE24FD001A592D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FreedrawTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Freedraw.app/Contents/MacOS/Freedraw";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1BCBC121ABE24FC001A592D /* Build configuration list for PBXProject "Freedraw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1BCBC341ABE24FD001A592D /* Debug */,
+				A1BCBC351ABE24FD001A592D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1BCBC361ABE24FD001A592D /* Build configuration list for PBXNativeTarget "Freedraw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1BCBC371ABE24FD001A592D /* Debug */,
+				A1BCBC381ABE24FD001A592D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A1BCBC391ABE24FD001A592D /* Build configuration list for PBXNativeTarget "FreedrawTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1BCBC3A1ABE24FD001A592D /* Debug */,
+				A1BCBC3B1ABE24FD001A592D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1BCBC0F1ABE24FC001A592D /* Project object */;
+}
