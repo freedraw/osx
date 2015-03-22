@@ -6,7 +6,7 @@ public protocol RequireExport: JSExport {
     func require(path: String) -> JSValue
 }
 
-let root: String = NSBundle.mainBundle().pathForResource("core", ofType: nil)!
+let root: String = NSBundle.mainBundle().pathForResource("core/src", ofType: nil)!
 var cache: Dictionary<String, JSValue> = Dictionary()
 
 @objc(Require)
