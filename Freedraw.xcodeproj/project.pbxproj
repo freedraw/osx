@@ -276,7 +276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "mv \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\" \"$TEMP_DIR/tmp.plist\"\nsed \"s/__GIT_SHA__/$(git rev-parse --short HEAD)/\" \"$TEMP_DIR/tmp.plist\" >\"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\nrm \"$TEMP_DIR/tmp.plist\"";
+			shellScript = "# update Info.plist build number\nmv \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\" \"$TEMP_DIR/tmp.plist\"\nsed \"s/__GIT_SHA__/$(git rev-parse --short HEAD)/\" \"$TEMP_DIR/tmp.plist\" >\"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\nrm \"$TEMP_DIR/tmp.plist\"";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
