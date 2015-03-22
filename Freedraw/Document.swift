@@ -71,4 +71,9 @@ extension Document {
     func showJavaScriptConsole(sender: AnyObject?) {
         webView.inspector().showConsole(self)
     }
+    
+    @objc
+    func forceReload(sender: AnyObject?) {
+        webView.reloadFromOrigin(sender)
+    }
 }
