@@ -3,7 +3,7 @@ import WebKit
 
 @objc(RequireExport)
 public protocol RequireExport: JSExport {
-    func require(path: String) -> AnyObject
+    func require(path: NSString) -> AnyObject
 }
 
 let root: String = NSBundle.mainBundle().pathForResource("core/src", ofType: nil)!
@@ -17,9 +17,9 @@ public class Require: NSObject, RequireExport {
         self.path = path
     }
     
-    public func require(file: String) -> AnyObject {
+    public func require(file: NSString) -> AnyObject {
         let fp = file.hasPrefix("./")
-            ? path.stringByAppendingPathComponent(file[advance(file.startIndex,2)..<file.endIndex])
+            ? path.stringByAppendingPathComponent(file.substringFromIndex(2))
             : root.stringByAppendingPathComponent(file)
 
         var isDirectory: ObjCBool = false
