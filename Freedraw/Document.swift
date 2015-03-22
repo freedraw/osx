@@ -1,11 +1,3 @@
-//
-//  Document.swift
-//  Freedraw
-//
-//  Created by Nathan Dinsmore on 2015-03-21.
-//  Copyright (c) 2015 Nathan Dinsmore. All rights reserved.
-//
-
 import Cocoa
 
 class Document: NSDocument {
