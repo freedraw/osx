@@ -419,7 +419,7 @@
 				INFOPLIST_FILE = Freedraw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Freedraw-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Freedraw/Freedraw-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -433,7 +433,7 @@
 				INFOPLIST_FILE = Freedraw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Freedraw-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Freedraw/Freedraw-Bridging-Header.h";
 			};
 			name = Release;
 		};
