@@ -15,6 +15,7 @@ class Document: NSDocument {
     override func windowControllerDidLoadNib(windowController: NSWindowController) {
         super.windowControllerDidLoadNib(windowController)
         if let url = NSBundle.mainBundle().URLForResource("main", withExtension: "html", subdirectory: "core") {
+            webView.drawsBackground = false
             webView.frameLoadDelegate = self
             webView.mainFrame.loadRequest(NSURLRequest(URL: url))
         } else {
