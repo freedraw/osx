@@ -173,6 +173,7 @@
 				A1BCBC131ABE24FD001A592D /* Sources */,
 				A1BCBC141ABE24FD001A592D /* Frameworks */,
 				A1BCBC151ABE24FD001A592D /* Resources */,
+				A1DEF09D1ABE929000D7163D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -259,6 +260,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A1DEF09D1ABE929000D7163D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "mv \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\" \"$TEMP_DIR/tmp.plist\"\nsed \"s/__GIT_SHA__/$(git rev-parse --short HEAD)/\" \"$TEMP_DIR/tmp.plist\" >\"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\nrm \"$TEMP_DIR/tmp.plist\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A1BCBC131ABE24FD001A592D /* Sources */ = {
