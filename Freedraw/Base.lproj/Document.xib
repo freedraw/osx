@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="6751"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="Document" customModule="Freedraw" customModuleProvider="target">
@@ -14,16 +15,29 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="xOd-HO-29H" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="133" y="235" width="507" height="413"/>
+            <rect key="contentRect" x="133" y="235" width="558" height="468"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <value key="minSize" type="size" width="94" height="86"/>
             <view key="contentView" id="gIp-Ho-8D9">
-                <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
+                <rect key="frame" x="0.0" y="0.0" width="558" height="468"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <webView translatesAutoresizingMaskIntoConstraints="NO" id="Hov-1c-BN7">
+                        <rect key="frame" x="0.0" y="0.0" width="558" height="468"/>
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO" allowsAnimatedImages="NO" allowsAnimatedImageLooping="NO"/>
+                    </webView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Hov-1c-BN7" secondAttribute="trailing" id="0Ky-Fc-wM6"/>
+                    <constraint firstItem="Hov-1c-BN7" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="V0z-Pc-55M"/>
+                    <constraint firstItem="Hov-1c-BN7" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="e7O-FH-t52"/>
+                    <constraint firstAttribute="bottom" secondItem="Hov-1c-BN7" secondAttribute="bottom" id="uEf-KT-TeW"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
             </connections>
+            <point key="canvasLocation" x="507" y="377"/>
         </window>
     </objects>
 </document>
