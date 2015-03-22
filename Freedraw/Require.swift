@@ -43,7 +43,12 @@ public class Require: NSObject, RequireExport {
             return JSValue(undefinedInContext: context)
         }
 
-        let wrappedSource = "var require = this.require.bind(this);" + source! + ";exports"
+        let wrappedSource = join(";", [
+            "var require = this.require.bind(this)",
+            "var exports = {}",
+            source! as String,
+            "exports"
+        ])
         let req = Require(path: fp.stringByDeletingLastPathComponent)
         let result = context.evaluateScript(wrappedSource, withThisObject: JSValue(object:req, inContext:context), sourceURL: NSURL(fileURLWithPath: filePath), startingLineNumber: 1)
         cache.updateValue(result, forKey: filePath)
