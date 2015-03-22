@@ -1,6 +1,9 @@
 import Cocoa
+import WebKit
 
 class Document: NSDocument {
+    
+    @IBOutlet weak var webView: WebView!
 
     override class func autosavesInPlace() -> Bool {
         return true
