@@ -60,7 +60,7 @@ public class Native: NSObject, NativeExport {
     }
     
     public func showConsole() {
-        self.document?.webView.inspector().showConsole(self)
+        document?.webView.inspector().showConsole(self)
     }
     
     public func require(path: NSString!) -> AnyObject {
