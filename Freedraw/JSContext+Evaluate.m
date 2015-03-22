@@ -10,7 +10,7 @@
     JSStringRef sourceURLJS = sourceURL ? JSStringCreateWithCFString((__bridge CFStringRef) [sourceURL absoluteString]) : NULL;
     JSValueRef result = JSEvaluateScript(self.JSGlobalContextRef, scriptJS, thisObject ? (JSObjectRef) thisObject.JSValueRef : NULL, sourceURLJS, startingLineNumber, &exceptionValue);
     JSStringRelease(scriptJS);
-    JSStringRelease(sourceURLJS);
+    if (sourceURLJS) JSStringRelease(sourceURLJS);
     
     if (exceptionValue) {
         self.exceptionHandler(self, [JSValue valueWithJSValueRef:exceptionValue inContext:self]);
