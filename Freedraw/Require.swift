@@ -71,4 +71,8 @@ public class Require: NSObject, RequireExport {
         cache[filePath] = source!
         return source!
     }
+    
+    class func clearCache() {
+        cache.removeAll(keepCapacity: true)
+    }
 }

@@ -27,6 +27,7 @@ class Document: NSDocument {
     }
 
     override func webView(sender: WebView!, didCommitLoadForFrame frame: WebFrame!) {
+        Require.clearCache()
         frame.windowObject.JSValue().setValue(native, forProperty: "Native")
     }
 
