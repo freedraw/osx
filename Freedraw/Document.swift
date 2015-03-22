@@ -26,7 +26,5 @@ class Document: NSDocument {
         outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
         return false
     }
-
-
 }
 
