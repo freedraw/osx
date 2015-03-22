@@ -68,18 +68,24 @@ public class Native: NSObject, NativeExport {
     public func require(path: NSString) -> AnyObject {
         return require.require(path)
     }
-    
+
     // MARK: - Communication with JavaScript
-    
+
     var jsBlock: Optional<() -> Void>
-    
-    func doJS(block: () -> Void) {
+    var jsException: JSValue?
+
+    func doJS(block: () -> Void) -> JSValue? {
         jsBlock = block
+        jsException = nil
         document?.webView.stringByEvaluatingJavaScriptFromString("Native.doJSBack()")
         jsBlock = nil
+        let exc = jsException
+        jsException = nil
+        return exc
     }
-    
+
     public func doJSBack() {
         jsBlock!()
+        jsException = JSContext.currentContext().exception
     }
 }
