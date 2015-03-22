@@ -7,6 +7,7 @@ class Document: NSDocument {
     
     var native: Native?
     var hooks: JSValue?
+    var jsLoadedFile = false
     
     override init() {
         super.init()
@@ -53,10 +54,29 @@ extension Document {
         return callHook("getData", withArguments: [typeName as NSString], error: outError)?.toString().dataUsingEncoding(NSUTF8StringEncoding)
     }
 
-    override func readFromData(data: NSData, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
-        let contents = NSString(data: data, encoding: NSUTF8StringEncoding)!
-        callHook("loadData", withArguments: [typeName as NSString, contents], error: outError)
-        return outError.memory == nil
+    override func readFromURL(url: NSURL, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
+        jsLoadedFile = false
+        return true
+    }
+
+    func jsDone() {
+        if let url = fileURL {
+            var error: NSError?
+            let contents = NSString(contentsOfURL: url, encoding: NSUTF8StringEncoding, error: &error)
+            if error == nil && contents != nil {
+                callHook("loadData", withArguments: [fileType!, contents!], error: &error)
+                println("\(error)")
+            }
+            if let error = error {
+//                close()
+                presentError(error)
+            }
+            jsLoadedFile = true
+        }
+    }
+
+    override var entireFileLoaded: Bool {
+        return jsLoadedFile
     }
 
     func callHook(name: String, withArguments args: [AnyObject], error outError: NSErrorPointer) -> JSValue? {
