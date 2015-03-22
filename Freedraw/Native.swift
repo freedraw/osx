@@ -5,7 +5,7 @@ import WebKit
 public protocol NativeExport: JSExport {
     func save()
     
-    func pushCursor(name: String)
+    func pushCursor(name: NSString)
     func popCursor()
 
     func showConsole()
@@ -27,7 +27,7 @@ public class Native: NSObject, NativeExport {
     }
 
     var trackingArea: NSTrackingArea?
-    public func pushCursor(name: String) {
+    public func pushCursor(name: NSString) {
         getNamedCursor(name).push()
     }
 
@@ -35,7 +35,7 @@ public class Native: NSObject, NativeExport {
         NSCursor.pop()
     }
 
-    func getNamedCursor(name: String) -> NSCursor {
+    func getNamedCursor(name: NSString) -> NSCursor {
         switch (name) {
         case "default": return NSCursor.arrowCursor()
         case "context-menu": return NSCursor.contextualMenuCursor()
