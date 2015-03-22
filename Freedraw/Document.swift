@@ -50,22 +50,7 @@ extension Document {
     }
 
     override func dataOfType(typeName: String, error outError: NSErrorPointer) -> NSData? {
-        // Insert code here to write your document to data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning nil.
-        // You can also choose to override fileWrapperOfType:error:, writeToURL:ofType:error:, or writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-        if hooks == nil {
-            outError.memory = NSError(domain: ErrorDomain, code: ErrorCode.CannotCommunicate.rawValue, userInfo: [
-                NSLocalizedFailureReasonErrorKey: NSLocalizedString("Cannot communicate with JavaScriptCore.", comment: "")])
-        }
-        let context = hooks!.context
-        var result: JSValue?
-        native!.doJS {
-            result = self.hooks!.invokeMethod("getData", withArguments: [typeName as NSString])
-        }
-        if let exc = context.exception {
-            outError.memory = NSError(domain: ErrorDomain, code: ErrorCode.JSError.rawValue, userInfo: [
-                NSLocalizedFailureReasonErrorKey: NSLocalizedString("JavaScript error.", comment: "")])
-        }
-        return result!.toString().dataUsingEncoding(NSUTF8StringEncoding)
+        return callHook("getData", withArguments: [typeName as NSString], error: outError)?.toString().dataUsingEncoding(NSUTF8StringEncoding)
     }
 
     override func readFromData(data: NSData, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
@@ -74,6 +59,25 @@ extension Document {
         // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
         outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
         return false
+    }
+
+    func callHook(name: String, withArguments args: [AnyObject], error outError: NSErrorPointer) -> JSValue? {
+        if hooks == nil {
+            outError.memory = NSError(domain: ErrorDomain, code: ErrorCode.CannotCommunicate.rawValue, userInfo: [
+                NSLocalizedFailureReasonErrorKey: NSLocalizedString("Cannot communicate with JavaScriptCore.", comment: "")])
+            return nil
+        }
+        let context = hooks!.context
+        var result: JSValue?
+        let exc = native!.doJS {
+            result = self.hooks!.invokeMethod(name, withArguments: args)
+        }
+        if exc != nil {
+            outError.memory = NSError(domain: ErrorDomain, code: ErrorCode.JSError.rawValue, userInfo: [
+                NSLocalizedFailureReasonErrorKey: NSLocalizedString("JavaScript error.", comment: "")])
+            return nil
+        }
+        return result!
     }
 }
 
