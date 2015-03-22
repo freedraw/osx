@@ -22,7 +22,7 @@
 		<key>70540B9752311044FB903145E00D8024FFDD847B</key>
 		<string>../..</string>
 		<key>EB76935F282A8847D0A182EA219341D5B18466A6</key>
-		<string>../..core/</string>
+		<string>../..core</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/freedraw/osx</string>
@@ -36,17 +36,17 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>EB76935F282A8847D0A182EA219341D5B18466A6</string>
+			<string>70540B9752311044FB903145E00D8024FFDD847B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>core</string>
+			<string>Freedraw</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>70540B9752311044FB903145E00D8024FFDD847B</string>
+			<string>EB76935F282A8847D0A182EA219341D5B18466A6</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Freedraw</string>
+			<string>Freedrawcore</string>
 		</dict>
 	</array>
 </dict>
