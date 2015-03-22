@@ -5,6 +5,19 @@ class Document: NSDocument {
     
     @IBOutlet weak var webView: WebView!
 
+    override func windowControllerDidLoadNib(windowController: NSWindowController) {
+        super.windowControllerDidLoadNib(windowController)
+        if let url = NSBundle.mainBundle().URLForResource("main", withExtension: "html", subdirectory: "core") {
+            webView.mainFrame.loadRequest(NSURLRequest(URL: url))
+        } else {
+            let alert = NSAlert()
+            alert.messageText = "Cannot find core/main.html"
+            alert.informativeText = "This file is the entry point for Freedraw. Is the core submodule up-to-date?"
+            alert.runModal()
+            NSApplication.sharedApplication().terminate(self)
+        }
+    }
+
     override class func autosavesInPlace() -> Bool {
         return true
     }
