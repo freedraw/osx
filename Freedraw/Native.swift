@@ -12,6 +12,8 @@ public protocol NativeExport: JSExport {
     
     func require(path: NSString) -> AnyObject
 
+    func done()
+
     func doJSBack()
 }
 
@@ -70,6 +72,10 @@ public class Native: NSObject, NativeExport {
     }
 
     // MARK: - Communication with JavaScript
+
+    public func done() {
+        document?.jsDone()
+    }
 
     var jsBlock: Optional<() -> Void>
     var jsException: JSValue?
