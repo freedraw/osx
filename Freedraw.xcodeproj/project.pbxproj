@@ -18,6 +18,7 @@
 		A1C66EE41ABE53F000833C54 /* Native.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C66EE31ABE53F000833C54 /* Native.swift */; };
 		A1DEF0901ABE5DF900D7163D /* Require.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DEF08F1ABE5DF900D7163D /* Require.swift */; };
 		A1DEF0951ABE7D7A00D7163D /* JSContext+Evaluate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DEF0941ABE7D7A00D7163D /* JSContext+Evaluate.m */; };
+		A1DEF09C1ABE8FF100D7163D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A1DEF09B1ABE8FF100D7163D /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		A1DEF0941ABE7D7A00D7163D /* JSContext+Evaluate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSContext+Evaluate.m"; sourceTree = "<group>"; };
 		A1DEF0991ABE885400D7163D /* WebInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebInspector.h; sourceTree = "<group>"; };
 		A1DEF09A1ABE891A00D7163D /* WebView+Inspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebView+Inspector.h"; sourceTree = "<group>"; };
+		A1DEF09B1ABE8FF100D7163D /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		A1BCBC1A1ABE24FD001A592D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A1DEF09B1ABE8FF100D7163D /* Credits.rtf */,
 				A1BCBC1B1ABE24FD001A592D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -240,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DEF09C1ABE8FF100D7163D /* Credits.rtf in Resources */,
 				A1BCBC221ABE24FD001A592D /* Document.xib in Resources */,
 				A1C66EE11ABE4FFE00833C54 /* core in Resources */,
 				A1BCBC241ABE24FD001A592D /* Images.xcassets in Resources */,
