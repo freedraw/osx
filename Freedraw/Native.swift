@@ -11,6 +11,8 @@ public protocol NativeExport: JSExport {
     func showConsole()
     
     func require(path: NSString) -> AnyObject
+
+    func doJSBack()
 }
 
 @objc(Native)
@@ -65,5 +67,19 @@ public class Native: NSObject, NativeExport {
     
     public func require(path: NSString) -> AnyObject {
         return require.require(path)
+    }
+    
+    // MARK: - Communication with JavaScript
+    
+    var jsBlock: Optional<() -> Void>
+    
+    func doJS(block: () -> Void) {
+        jsBlock = block
+        document?.webView.stringByEvaluatingJavaScriptFromString("Native.doJSBack()")
+        jsBlock = nil
+    }
+    
+    public func doJSBack() {
+        jsBlock!()
     }
 }
