@@ -13,6 +13,7 @@
 		A1BCBC241ABE24FD001A592D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1BCBC231ABE24FD001A592D /* Images.xcassets */; };
 		A1BCBC271ABE24FD001A592D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BCBC251ABE24FD001A592D /* MainMenu.xib */; };
 		A1BCBC331ABE24FD001A592D /* FreedrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCBC321ABE24FD001A592D /* FreedrawTests.swift */; };
+		A1C66EDF1ABE4B3A00833C54 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C66EDE1ABE4B3A00833C54 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		A1BCBC2C1ABE24FD001A592D /* FreedrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreedrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1BCBC311ABE24FD001A592D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1BCBC321ABE24FD001A592D /* FreedrawTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreedrawTests.swift; sourceTree = "<group>"; };
+		A1C66EDE1ABE4B3A00833C54 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C66EDF1ABE4B3A00833C54 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		A1BCBC0E1ABE24FC001A592D = {
 			isa = PBXGroup;
 			children = (
+				A1C66EDE1ABE4B3A00833C54 /* WebKit.framework */,
 				A1BCBC191ABE24FD001A592D /* Freedraw */,
 				A1BCBC2F1ABE24FD001A592D /* FreedrawTests */,
 				A1BCBC181ABE24FD001A592D /* Products */,
@@ -409,6 +413,7 @@
 				A1BCBC381ABE24FD001A592D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A1BCBC391ABE24FD001A592D /* Build configuration list for PBXNativeTarget "FreedrawTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				A1BCBC3B1ABE24FD001A592D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
