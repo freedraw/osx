@@ -42,7 +42,6 @@ public class Require: NSObject, RequireExport {
             context.exception = JSValue(newErrorFromMessage: message, inContext: context)
             return JSValue(undefinedInContext: context)
         }
-        
 
         let wrappedSource = "var require = this.require.bind(this);" + source! + ";exports"
         let req = Require(path: fp.stringByDeletingLastPathComponent)
