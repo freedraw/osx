@@ -21,8 +21,13 @@ public class Require: NSObject, RequireExport {
         let fp = file.hasPrefix("./")
             ? path.stringByAppendingPathComponent(file[advance(file.startIndex,2)..<file.endIndex])
             : root.stringByAppendingPathComponent(file)
-        let filePath = fp.pathExtension == "" ? fp + ".js" : fp
         
+        var isDirectory: ObjCBool = false
+        NSFileManager.defaultManager().fileExistsAtPath(fp, isDirectory: &isDirectory)
+
+        let filePath: String! = isDirectory ? fp.stringByAppendingPathComponent("_index.js") :
+            fp.pathExtension == "" ? fp.stringByAppendingPathExtension("js") : fp
+
         if let m = cache[filePath] {
             return m
         }
