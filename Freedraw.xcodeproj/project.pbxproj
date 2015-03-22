@@ -14,6 +14,7 @@
 		A1BCBC271ABE24FD001A592D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BCBC251ABE24FD001A592D /* MainMenu.xib */; };
 		A1BCBC331ABE24FD001A592D /* FreedrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCBC321ABE24FD001A592D /* FreedrawTests.swift */; };
 		A1C66EDF1ABE4B3A00833C54 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C66EDE1ABE4B3A00833C54 /* WebKit.framework */; };
+		A1C66EE11ABE4FFE00833C54 /* core in Resources */ = {isa = PBXBuildFile; fileRef = A1C66EE01ABE4FFE00833C54 /* core */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		A1BCBC311ABE24FD001A592D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1BCBC321ABE24FD001A592D /* FreedrawTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreedrawTests.swift; sourceTree = "<group>"; };
 		A1C66EDE1ABE4B3A00833C54 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A1C66EE01ABE4FFE00833C54 /* core */ = {isa = PBXFileReference; lastKnownFileType = folder; path = core; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				A1BCBC231ABE24FD001A592D /* Images.xcassets */,
 				A1BCBC251ABE24FD001A592D /* MainMenu.xib */,
 				A1BCBC1A1ABE24FD001A592D /* Supporting Files */,
+				A1C66EE01ABE4FFE00833C54 /* core */,
 			);
 			path = Freedraw;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1BCBC221ABE24FD001A592D /* Document.xib in Resources */,
+				A1C66EE11ABE4FFE00833C54 /* core in Resources */,
 				A1BCBC241ABE24FD001A592D /* Images.xcassets in Resources */,
 				A1BCBC271ABE24FD001A592D /* MainMenu.xib in Resources */,
 			);
