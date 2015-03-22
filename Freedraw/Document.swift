@@ -65,7 +65,6 @@ extension Document {
             let contents = NSString(contentsOfURL: url, encoding: NSUTF8StringEncoding, error: &error)
             if error == nil && contents != nil {
                 callHook("loadData", withArguments: [fileType!, contents!], error: &error)
-                println("\(error)")
             }
             if let error = error {
 //                close()
