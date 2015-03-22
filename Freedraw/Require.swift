@@ -39,8 +39,9 @@ public class Require: NSObject, RequireExport {
         }
         
 
-        let wrappedSource = source! + "; exports"
-        let result = context.evaluateScript(wrappedSource, withSourceURL: NSURL(fileURLWithPath: filePath), startingLineNumber: 1)
+        let wrappedSource = "var require = this.require.bind(this);" + source! + ";exports"
+        let req = Require(path: fp.stringByDeletingLastPathComponent)
+        let result = context.evaluateScript(wrappedSource, withThisObject: JSValue(object:req, inContext:context), sourceURL: NSURL(fileURLWithPath: filePath), startingLineNumber: 1)
         cache.updateValue(result, forKey: filePath)
         return result
     }
