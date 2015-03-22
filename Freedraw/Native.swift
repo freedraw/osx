@@ -10,7 +10,7 @@ public protocol NativeExport: JSExport {
 
     func showConsole()
     
-    func require(path: NSString!) -> AnyObject
+    func require(path: NSString) -> AnyObject
 }
 
 @objc(Native)
@@ -63,7 +63,7 @@ public class Native: NSObject, NativeExport {
         document?.webView.inspector().showConsole(self)
     }
     
-    public func require(path: NSString!) -> AnyObject {
+    public func require(path: NSString) -> AnyObject {
         return require.require(path)
     }
 }
