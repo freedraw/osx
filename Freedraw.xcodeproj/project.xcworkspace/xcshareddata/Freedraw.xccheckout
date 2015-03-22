@@ -12,6 +12,8 @@
 	<dict>
 		<key>70540B9752311044FB903145E00D8024FFDD847B</key>
 		<string>https://github.com/freedraw/osx</string>
+		<key>EB76935F282A8847D0A182EA219341D5B18466A6</key>
+		<string>https://github.com/freedraw/core.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Freedraw.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>70540B9752311044FB903145E00D8024FFDD847B</key>
 		<string>../..</string>
+		<key>EB76935F282A8847D0A182EA219341D5B18466A6</key>
+		<string>../..core/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/freedraw/osx</string>
@@ -28,6 +32,14 @@
 	<string>70540B9752311044FB903145E00D8024FFDD847B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EB76935F282A8847D0A182EA219341D5B18466A6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>core</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
