@@ -2,13 +2,13 @@ import Cocoa
 import WebKit
 
 class Document: NSDocument {
-    
+
     @IBOutlet weak var webView: WebView!
-    
+
     var native: Native?
     var hooks: JSValue?
     var jsLoadedFile = false
-    
+
     override init() {
         super.init()
         native = Native(document: self)
@@ -45,7 +45,7 @@ class Document: NSDocument {
 
 // MARK: - Saving/Loading
 extension Document {
-    
+
     override class func autosavesInPlace() -> Bool {
         return true
     }
@@ -105,12 +105,12 @@ extension Document {
     func showDeveloperTools(sender: AnyObject?) {
         webView.inspector().show(self)
     }
-    
+
     @objc
     func showJavaScriptConsole(sender: AnyObject?) {
         webView.inspector().showConsole(self)
     }
-    
+
     @objc
     func forceReload(sender: AnyObject?) {
         webView.reloadFromOrigin(sender)

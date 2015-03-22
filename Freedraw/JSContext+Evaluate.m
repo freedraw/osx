@@ -11,12 +11,12 @@
     JSValueRef result = JSEvaluateScript(self.JSGlobalContextRef, scriptJS, thisObject ? (JSObjectRef) thisObject.JSValueRef : NULL, sourceURLJS, startingLineNumber, &exceptionValue);
     JSStringRelease(scriptJS);
     if (sourceURLJS) JSStringRelease(sourceURLJS);
-    
+
     if (exceptionValue) {
         self.exceptionHandler(self, [JSValue valueWithJSValueRef:exceptionValue inContext:self]);
         return [JSValue valueWithUndefinedInContext:self];
     }
-    
+
     return [JSValue valueWithJSValueRef:result inContext:self];
 }
 

@@ -12,11 +12,11 @@ var cache: Dictionary<String, AnyObject> = Dictionary()
 @objc(Require)
 public class Require: NSObject, RequireExport {
     let path: String
-    
+
     init(path: String) {
         self.path = path
     }
-    
+
     public func require(file: NSString) -> AnyObject {
         let fp = file.hasPrefix("./")
             ? path.stringByAppendingPathComponent(file.substringFromIndex(2))
@@ -55,7 +55,7 @@ public class Require: NSObject, RequireExport {
             cache[filePath] = result!
             return result!
         }
-        
+
         if filePath.pathExtension == "json" {
             let result: AnyObject? = NSJSONSerialization.JSONObjectWithData(source!.dataUsingEncoding(NSUTF8StringEncoding)!, options: NSJSONReadingOptions.AllowFragments, error: &err)
             if let err = err {
@@ -67,11 +67,11 @@ public class Require: NSObject, RequireExport {
             cache[filePath] = result!
             return result!
         }
-        
+
         cache[filePath] = source!
         return source!
     }
-    
+
     class func clearCache() {
         cache.removeAll(keepCapacity: true)
     }

@@ -4,12 +4,12 @@ import WebKit
 @objc(NativeExport)
 public protocol NativeExport: JSExport {
     func save()
-    
+
     func pushCursor(name: NSString)
     func popCursor()
 
     func showConsole()
-    
+
     func require(path: NSString) -> AnyObject
 
     func done()
@@ -21,7 +21,7 @@ public protocol NativeExport: JSExport {
 public class Native: NSObject, NativeExport {
     weak var document: Document?
     lazy var require: Require = Require(path: NSBundle.mainBundle().pathForResource("core", ofType: nil)!)
-    
+
     init(document: Document) {
         self.document = document
     }
@@ -62,11 +62,11 @@ public class Native: NSObject, NativeExport {
         default: return NSCursor.arrowCursor()
         }
     }
-    
+
     public func showConsole() {
         document?.webView.inspector().showConsole(self)
     }
-    
+
     public func require(path: NSString) -> AnyObject {
         return require.require(path)
     }
