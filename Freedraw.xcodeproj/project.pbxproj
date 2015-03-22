@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1A0019E1ABF550F007785AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A0019D1ABF550F007785AE /* Constants.swift */; };
 		A1BCBC1D1ABE24FD001A592D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCBC1C1ABE24FD001A592D /* AppDelegate.swift */; };
 		A1BCBC1F1ABE24FD001A592D /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCBC1E1ABE24FD001A592D /* Document.swift */; };
 		A1BCBC221ABE24FD001A592D /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BCBC201ABE24FD001A592D /* Document.xib */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A1A0019D1ABF550F007785AE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1BCBC171ABE24FD001A592D /* Freedraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freedraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1BCBC1B1ABE24FD001A592D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1BCBC1C1ABE24FD001A592D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				A1DEF0981ABE883200D7163D /* WebInspector */,
 				A1DEF0961ABE7D9200D7163D /* JavaScriptCore extensions */,
 				A1C66EE21ABE53AD00833C54 /* API */,
+				A1A0019D1ABF550F007785AE /* Constants.swift */,
 				A1BCBC1E1ABE24FD001A592D /* Document.swift */,
 				A1BCBC1C1ABE24FD001A592D /* AppDelegate.swift */,
 				A1BCBC201ABE24FD001A592D /* Document.xib */,
@@ -288,6 +291,7 @@
 				A1C66EE41ABE53F000833C54 /* Native.swift in Sources */,
 				A1BCBC1D1ABE24FD001A592D /* AppDelegate.swift in Sources */,
 				A1DEF0951ABE7D7A00D7163D /* JSContext+Evaluate.m in Sources */,
+				A1A0019E1ABF550F007785AE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
