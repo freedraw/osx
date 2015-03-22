@@ -25,4 +25,3 @@ class Document: NSDocument {
         return false
     }
 }
-
