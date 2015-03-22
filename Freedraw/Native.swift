@@ -1,11 +1,13 @@
 import Cocoa
 import WebKit
 
-protocol NativeExport: JSExport {
+@objc(NativeExport)
+public protocol NativeExport: JSExport {
     func save()
 }
 
-class Native: NativeExport {
+@objc(Native)
+public class Native: NSObject, NativeExport {
     weak var document: NSDocument?
     
     init(document: NSDocument) {
