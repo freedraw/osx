@@ -40,7 +40,6 @@ class Document: NSDocument {
     override var windowNibName: String? {
         return "Document"
     }
-    
 }
 
 // MARK: - Saving/Loading
