@@ -15,7 +15,6 @@
 		A1BCBC271ABE24FD001A592D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BCBC251ABE24FD001A592D /* MainMenu.xib */; };
 		A1BCBC331ABE24FD001A592D /* FreedrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCBC321ABE24FD001A592D /* FreedrawTests.swift */; };
 		A1C66EDF1ABE4B3A00833C54 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C66EDE1ABE4B3A00833C54 /* WebKit.framework */; };
-		A1C66EE11ABE4FFE00833C54 /* core in Resources */ = {isa = PBXBuildFile; fileRef = A1C66EE01ABE4FFE00833C54 /* core */; };
 		A1C66EE41ABE53F000833C54 /* Native.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C66EE31ABE53F000833C54 /* Native.swift */; };
 		A1DEF0901ABE5DF900D7163D /* Require.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DEF08F1ABE5DF900D7163D /* Require.swift */; };
 		A1DEF0951ABE7D7A00D7163D /* JSContext+Evaluate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DEF0941ABE7D7A00D7163D /* JSContext+Evaluate.m */; };
@@ -177,6 +176,7 @@
 				A1BCBC141ABE24FD001A592D /* Frameworks */,
 				A1BCBC151ABE24FD001A592D /* Resources */,
 				A1DEF09D1ABE929000D7163D /* ShellScript */,
+				A17D88251ABF886500B95B67 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -249,7 +249,6 @@
 			files = (
 				A1DEF09C1ABE8FF100D7163D /* Credits.rtf in Resources */,
 				A1BCBC221ABE24FD001A592D /* Document.xib in Resources */,
-				A1C66EE11ABE4FFE00833C54 /* core in Resources */,
 				A1BCBC241ABE24FD001A592D /* Images.xcassets in Resources */,
 				A1BCBC271ABE24FD001A592D /* MainMenu.xib in Resources */,
 			);
@@ -265,6 +264,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A17D88251ABF886500B95B67 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "# symlink core directory for debug builds\nsrc=\"$PROJECT_DIR/core\"\ndst=\"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/core\"\n\nrm -rf \"$dst\"\nif [[ \"$CONFIGURATION\" = \"Debug\" ]]; then\n    cd \"$(dirname \"$dst\")\"\n    ln -s \"$src\"\nelse\n    cp -r \"$src\" \"$dst\"\nfi";
+			showEnvVarsInLog = 0;
+		};
 		A1DEF09D1ABE929000D7163D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
