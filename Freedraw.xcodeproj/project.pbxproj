@@ -15,6 +15,7 @@
 		A1BCBC331ABE24FD001A592D /* FreedrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCBC321ABE24FD001A592D /* FreedrawTests.swift */; };
 		A1C66EDF1ABE4B3A00833C54 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C66EDE1ABE4B3A00833C54 /* WebKit.framework */; };
 		A1C66EE11ABE4FFE00833C54 /* core in Resources */ = {isa = PBXBuildFile; fileRef = A1C66EE01ABE4FFE00833C54 /* core */; };
+		A1C66EE41ABE53F000833C54 /* NativeExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C66EE31ABE53F000833C54 /* NativeExport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		A1BCBC321ABE24FD001A592D /* FreedrawTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreedrawTests.swift; sourceTree = "<group>"; };
 		A1C66EDE1ABE4B3A00833C54 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A1C66EE01ABE4FFE00833C54 /* core */ = {isa = PBXFileReference; lastKnownFileType = folder; path = core; sourceTree = SOURCE_ROOT; };
+		A1C66EE31ABE53F000833C54 /* NativeExport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeExport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		A1BCBC191ABE24FD001A592D /* Freedraw */ = {
 			isa = PBXGroup;
 			children = (
+				A1C66EE21ABE53AD00833C54 /* API */,
 				A1BCBC1C1ABE24FD001A592D /* AppDelegate.swift */,
 				A1BCBC1E1ABE24FD001A592D /* Document.swift */,
 				A1BCBC201ABE24FD001A592D /* Document.xib */,
@@ -117,6 +120,14 @@
 				A1BCBC311ABE24FD001A592D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1C66EE21ABE53AD00833C54 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A1C66EE31ABE53F000833C54 /* NativeExport.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1BCBC1F1ABE24FD001A592D /* Document.swift in Sources */,
+				A1C66EE41ABE53F000833C54 /* NativeExport.swift in Sources */,
 				A1BCBC1D1ABE24FD001A592D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
