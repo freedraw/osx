@@ -81,6 +81,10 @@ public class Native: NSObject, NativeExport {
     var jsException: JSValue?
 
     func doJS(block: () -> Void) -> JSValue? {
+        if let context = JSContext.currentContext() {
+            block()
+            return context.exception
+        }
         jsBlock = block
         jsException = nil
         document?.webView.stringByEvaluatingJavaScriptFromString("Native.doJSBack()")
