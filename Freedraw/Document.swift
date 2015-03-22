@@ -26,12 +26,17 @@ class Document: NSDocument {
         }
     }
 
-    override class func autosavesInPlace() -> Bool {
-        return true
-    }
-
     override var windowNibName: String? {
         return "Document"
+    }
+    
+}
+
+// MARK: - Saving/Loading
+extension Document {
+    
+    override class func autosavesInPlace() -> Bool {
+        return true
     }
 
     override func dataOfType(typeName: String, error outError: NSErrorPointer) -> NSData? {
@@ -47,5 +52,19 @@ class Document: NSDocument {
         // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
         outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
         return false
+    }
+}
+
+// MARK: - Menu Items
+extension Document {
+
+    @objc
+    func showDeveloperTools(sender: AnyObject?) {
+        webView.inspector().show(self)
+    }
+    
+    @objc
+    func showJavaScriptConsole(sender: AnyObject?) {
+        webView.inspector().showConsole(self)
     }
 }
