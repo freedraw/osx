@@ -2,11 +2,6 @@ import Cocoa
 
 class Document: NSDocument {
 
-    override func windowControllerDidLoadNib(aController: NSWindowController) {
-        super.windowControllerDidLoadNib(aController)
-        // Add any code here that needs to be executed once the windowController has loaded the document's window.
-    }
-
     override class func autosavesInPlace() -> Bool {
         return true
     }
