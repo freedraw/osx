@@ -15,8 +15,8 @@ class Document: NSDocument {
     override func windowControllerDidLoadNib(windowController: NSWindowController) {
         super.windowControllerDidLoadNib(windowController)
         if let url = NSBundle.mainBundle().URLForResource("main", withExtension: "html", subdirectory: "core") {
+            webView.frameLoadDelegate = self
             webView.mainFrame.loadRequest(NSURLRequest(URL: url))
-            webView.windowScriptObject.JSValue().setValue(native, forProperty: "Native")
         } else {
             let alert = NSAlert()
             alert.messageText = "Cannot find core/main.html"
@@ -24,6 +24,10 @@ class Document: NSDocument {
             alert.runModal()
             NSApplication.sharedApplication().terminate(self)
         }
+    }
+
+    override func webView(sender: WebView!, didCommitLoadForFrame frame: WebFrame!) {
+        frame.windowObject.JSValue().setValue(native, forProperty: "Native")
     }
 
     override var windowNibName: String? {
