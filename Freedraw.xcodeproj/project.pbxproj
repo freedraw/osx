@@ -16,6 +16,8 @@
 		A1C66EDF1ABE4B3A00833C54 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C66EDE1ABE4B3A00833C54 /* WebKit.framework */; };
 		A1C66EE11ABE4FFE00833C54 /* core in Resources */ = {isa = PBXBuildFile; fileRef = A1C66EE01ABE4FFE00833C54 /* core */; };
 		A1C66EE41ABE53F000833C54 /* Native.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C66EE31ABE53F000833C54 /* Native.swift */; };
+		A1DEF0901ABE5DF900D7163D /* Require.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DEF08F1ABE5DF900D7163D /* Require.swift */; };
+		A1DEF0951ABE7D7A00D7163D /* JSContext+Evaluate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DEF0941ABE7D7A00D7163D /* JSContext+Evaluate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		A1C66EDE1ABE4B3A00833C54 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A1C66EE01ABE4FFE00833C54 /* core */ = {isa = PBXFileReference; lastKnownFileType = folder; path = core; sourceTree = SOURCE_ROOT; };
 		A1C66EE31ABE53F000833C54 /* Native.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Native.swift; sourceTree = "<group>"; };
+		A1DEF08F1ABE5DF900D7163D /* Require.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Require.swift; sourceTree = "<group>"; };
+		A1DEF0921ABE796400D7163D /* Freedraw-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Freedraw-Bridging-Header.h"; sourceTree = "<group>"; };
+		A1DEF0931ABE796400D7163D /* JSContext+Evaluate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSContext+Evaluate.h"; sourceTree = "<group>"; };
+		A1DEF0941ABE7D7A00D7163D /* JSContext+Evaluate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSContext+Evaluate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 				A1BCBC191ABE24FD001A592D /* Freedraw */,
 				A1BCBC2F1ABE24FD001A592D /* FreedrawTests */,
 				A1BCBC181ABE24FD001A592D /* Products */,
+				A1DEF0921ABE796400D7163D /* Freedraw-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,9 +92,10 @@
 		A1BCBC191ABE24FD001A592D /* Freedraw */ = {
 			isa = PBXGroup;
 			children = (
+				A1DEF0961ABE7D9200D7163D /* JavaScriptCore extensions */,
 				A1C66EE21ABE53AD00833C54 /* API */,
-				A1BCBC1C1ABE24FD001A592D /* AppDelegate.swift */,
 				A1BCBC1E1ABE24FD001A592D /* Document.swift */,
+				A1BCBC1C1ABE24FD001A592D /* AppDelegate.swift */,
 				A1BCBC201ABE24FD001A592D /* Document.xib */,
 				A1BCBC231ABE24FD001A592D /* Images.xcassets */,
 				A1BCBC251ABE24FD001A592D /* MainMenu.xib */,
@@ -126,8 +134,18 @@
 			isa = PBXGroup;
 			children = (
 				A1C66EE31ABE53F000833C54 /* Native.swift */,
+				A1DEF08F1ABE5DF900D7163D /* Require.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		A1DEF0961ABE7D9200D7163D /* JavaScriptCore extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1DEF0931ABE796400D7163D /* JSContext+Evaluate.h */,
+				A1DEF0941ABE7D7A00D7163D /* JSContext+Evaluate.m */,
+			);
+			name = "JavaScriptCore extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +250,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1BCBC1F1ABE24FD001A592D /* Document.swift in Sources */,
+				A1DEF0901ABE5DF900D7163D /* Require.swift in Sources */,
 				A1C66EE41ABE53F000833C54 /* Native.swift in Sources */,
 				A1BCBC1D1ABE24FD001A592D /* AppDelegate.swift in Sources */,
+				A1DEF0951ABE7D7A00D7163D /* JSContext+Evaluate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,10 +376,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Freedraw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Freedraw-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -367,10 +390,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Freedraw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Freedraw-Bridging-Header.h";
 			};
 			name = Release;
 		};
