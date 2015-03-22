@@ -3,3 +3,5 @@
 //
 
 #import "JSContext+Evaluate.h"
+#import "WebView+Inspector.h"
+#import "WebInspector.h"

@@ -48,6 +48,8 @@
 		A1DEF0921ABE796400D7163D /* Freedraw-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Freedraw-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1DEF0931ABE796400D7163D /* JSContext+Evaluate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSContext+Evaluate.h"; sourceTree = "<group>"; };
 		A1DEF0941ABE7D7A00D7163D /* JSContext+Evaluate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSContext+Evaluate.m"; sourceTree = "<group>"; };
+		A1DEF0991ABE885400D7163D /* WebInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebInspector.h; sourceTree = "<group>"; };
+		A1DEF09A1ABE891A00D7163D /* WebView+Inspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebView+Inspector.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		A1BCBC191ABE24FD001A592D /* Freedraw */ = {
 			isa = PBXGroup;
 			children = (
+				A1DEF0981ABE883200D7163D /* WebInspector */,
 				A1DEF0961ABE7D9200D7163D /* JavaScriptCore extensions */,
 				A1C66EE21ABE53AD00833C54 /* API */,
 				A1BCBC1E1ABE24FD001A592D /* Document.swift */,
@@ -146,6 +149,15 @@
 				A1DEF0941ABE7D7A00D7163D /* JSContext+Evaluate.m */,
 			);
 			name = "JavaScriptCore extensions";
+			sourceTree = "<group>";
+		};
+		A1DEF0981ABE883200D7163D /* WebInspector */ = {
+			isa = PBXGroup;
+			children = (
+				A1DEF0991ABE885400D7163D /* WebInspector.h */,
+				A1DEF09A1ABE891A00D7163D /* WebView+Inspector.h */,
+			);
+			name = WebInspector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
