@@ -21,7 +21,7 @@ public class Native: NSObject, NativeExport {
     init(document: Document) {
         self.document = document
     }
-    
+
     public func save() {
         document?.saveDocument(self)
     }
