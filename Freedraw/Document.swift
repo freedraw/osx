@@ -6,6 +6,7 @@ class Document: NSDocument {
     @IBOutlet weak var webView: WebView!
     
     var native: Native?
+    var hooks: JSValue?
     
     override init() {
         super.init()
@@ -29,7 +30,11 @@ class Document: NSDocument {
 
     override func webView(sender: WebView!, didCommitLoadForFrame frame: WebFrame!) {
         Require.clearCache()
-        frame.windowObject.JSValue().setValue(native, forProperty: "Native")
+        let window = frame.windowObject.JSValue()
+        hooks = JSValue(newObjectInContext: window.context)
+
+        window.setValue(native, forProperty: "Native")
+        window.setValue(hooks, forProperty: "Hooks")
     }
 
     override var windowNibName: String? {
