@@ -91,7 +91,8 @@ extension Document {
         }
         if exc != nil {
             outError.memory = NSError(domain: ErrorDomain, code: ErrorCode.JSError.rawValue, userInfo: [
-                NSLocalizedFailureReasonErrorKey: NSLocalizedString("JavaScript error.", comment: "")])
+                NSLocalizedFailureReasonErrorKey: NSString(format: NSLocalizedString("JavaScript error: %@.", comment: ""), exc!.toString()),
+                NSLocalizedRecoverySuggestionErrorKey: exc!.valueForProperty("stack").toString()])
             return nil
         }
         return result!
