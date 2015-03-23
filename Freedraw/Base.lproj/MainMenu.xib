@@ -631,6 +631,14 @@
                                     <action selector="jsAction:" target="-1" id="6vB-sa-ptg"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Center Canvas" keyEquivalent="1" id="PIj-pZ-feP">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="representedObject" value="zoomCenter"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="jsAction:" target="-1" id="gqe-Wd-uoQ"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Zoom In" keyEquivalent="+" id="mfp-tM-Fm2">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="representedObject" value="zoomIn"/>
