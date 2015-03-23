@@ -10,7 +10,6 @@ class FreedrawView: WebView {
 extension FreedrawView {
 
     override func magnifyWithEvent(event: NSEvent) {
-        let position = self.convertPoint(event.locationInWindow, fromView: nil)
-        document?.callHook("dispatchMagnify", withArguments: [position.x, frame.height - position.y, event.magnification])
+        document?.callHook("dispatchMagnify", forEvent: event, withArguments: [event.magnification])
     }
 }
