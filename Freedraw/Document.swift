@@ -109,7 +109,18 @@ extension Document {
 
     func callHook(name: String, forEvent event: NSEvent, withArguments args: [AnyObject]) {
         let position = webView.convertPoint(event.locationInWindow, fromView: nil)
-        callHook(name, withArguments: [position.x, webView.frame.height - position.y] + args)
+        let flags = event.modifierFlags
+        let shiftKey = NSNumber(bool: flags & NSEventModifierFlags.ShiftKeyMask != nil)
+        let ctrlKey = NSNumber(bool: flags & NSEventModifierFlags.ControlKeyMask != nil)
+        let altKey = NSNumber(bool: flags & NSEventModifierFlags.AlternateKeyMask != nil)
+        let metaKey = NSNumber(bool: flags & NSEventModifierFlags.CommandKeyMask != nil)
+        callHook(name, withArguments: [
+            position.x,
+            webView.frame.height - position.y,
+            shiftKey,
+            ctrlKey,
+            altKey,
+            metaKey] + args)
     }
 }
 
