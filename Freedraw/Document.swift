@@ -78,6 +78,10 @@ extension Document {
     override var entireFileLoaded: Bool {
         return jsLoadedFile
     }
+}
+
+// MARK: - JS Hooks
+extension Document {
 
     func callHook(name: String, withArguments args: [AnyObject], error outError: NSErrorPointer = nil) -> JSValue? {
         if hooks == nil {
@@ -101,6 +105,11 @@ extension Document {
             return nil
         }
         return result!
+    }
+
+    func callHook(name: String, forEvent event: NSEvent, withArguments args: [AnyObject]) {
+        let position = webView.convertPoint(event.locationInWindow, fromView: nil)
+        callHook(name, withArguments: [position.x, webView.frame.height - position.y] + args)
     }
 }
 
