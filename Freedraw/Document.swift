@@ -79,7 +79,7 @@ extension Document {
         return jsLoadedFile
     }
 
-    func callHook(name: String, withArguments args: [AnyObject], error outError: NSErrorPointer) -> JSValue? {
+    func callHook(name: String, withArguments args: [AnyObject], error outError: NSErrorPointer = nil) -> JSValue? {
         if hooks == nil {
             if outError != nil {
                 outError.memory = NSError(domain: ErrorDomain, code: ErrorCode.CannotCommunicate.rawValue, userInfo: [
