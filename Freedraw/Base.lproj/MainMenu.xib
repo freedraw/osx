@@ -621,6 +621,23 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="bEN-Jh-qDO"/>
+                            <menuItem title="Zoom In" keyEquivalent="+" id="mfp-tM-Fm2">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="representedObject" value="zoomIn"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="jsAction:" target="-1" id="5yT-rn-25z"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom Out" keyEquivalent="-" id="jBV-RY-l8h">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="representedObject" value="zoomOut"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="jsAction:" target="-1" id="mrd-ap-Xkn"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="Vsw-UJ-Qkn"/>
                             <menuItem title="Force Reload" keyEquivalent="r" id="tCK-nO-iSM">
                                 <connections>
                                     <action selector="forceReload:" target="-1" id="Fbg-SY-1KG"/>
