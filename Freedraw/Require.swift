@@ -50,7 +50,7 @@ public class Require: NSObject, RequireExport {
                 ";return exports",
                 "}.call(self, this.require.bind(this), {}))"
             ])
-            let req = Require(path: fp.stringByDeletingLastPathComponent)
+            let req = Require(path: filePath.stringByDeletingLastPathComponent)
             let result = context.evaluateScript(wrappedSource, withThisObject: JSValue(object:req, inContext:context), sourceURL: NSURL(fileURLWithPath: filePath), startingLineNumber: 1)
             cache[filePath] = result!
             return result!
