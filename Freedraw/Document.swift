@@ -80,8 +80,10 @@ extension Document {
 
     func callHook(name: String, withArguments args: [AnyObject], error outError: NSErrorPointer) -> JSValue? {
         if hooks == nil {
-            outError.memory = NSError(domain: ErrorDomain, code: ErrorCode.CannotCommunicate.rawValue, userInfo: [
-                NSLocalizedFailureReasonErrorKey: NSLocalizedString("Cannot communicate with JavaScriptCore.", comment: "")])
+            if outError != nil {
+                outError.memory = NSError(domain: ErrorDomain, code: ErrorCode.CannotCommunicate.rawValue, userInfo: [
+                    NSLocalizedFailureReasonErrorKey: NSLocalizedString("Cannot communicate with JavaScriptCore.", comment: "")])
+            }
             return nil
         }
         let context = hooks!.context
@@ -90,9 +92,11 @@ extension Document {
             result = self.hooks!.invokeMethod(name, withArguments: args)
         }
         if exc != nil {
-            outError.memory = NSError(domain: ErrorDomain, code: ErrorCode.JSError.rawValue, userInfo: [
-                NSLocalizedFailureReasonErrorKey: NSString(format: NSLocalizedString("JavaScript error: %@.", comment: ""), exc!.toString()),
-                NSLocalizedRecoverySuggestionErrorKey: exc!.valueForProperty("stack").toString()])
+            if outError != nil {
+                outError.memory = NSError(domain: ErrorDomain, code: ErrorCode.JSError.rawValue, userInfo: [
+                    NSLocalizedFailureReasonErrorKey: NSString(format: NSLocalizedString("JavaScript error: %@.", comment: ""), exc!.toString()),
+                    NSLocalizedRecoverySuggestionErrorKey: exc!.valueForProperty("stack").toString()])
+            }
             return nil
         }
         return result!
