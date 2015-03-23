@@ -122,6 +122,10 @@ extension Document {
             altKey,
             metaKey] + args)
     }
+
+    func callHook(name: String, forEvent event: NSEvent) {
+        callHook(name, forEvent: event, withArguments: [])
+    }
 }
 
 // MARK: - Menu Items
