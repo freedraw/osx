@@ -623,6 +623,14 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="bEN-Jh-qDO"/>
+                            <menuItem title="Actual Size" keyEquivalent="0" id="cgD-5M-jM6">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="representedObject" value="zoom0"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="jsAction:" target="-1" id="6vB-sa-ptg"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Zoom In" keyEquivalent="+" id="mfp-tM-Fm2">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="representedObject" value="zoomIn"/>
