@@ -22,7 +22,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <webView translatesAutoresizingMaskIntoConstraints="NO" id="Hov-1c-BN7">
+                    <webView translatesAutoresizingMaskIntoConstraints="NO" id="Hov-1c-BN7" customClass="FreedrawView" customModule="Freedraw" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
                         <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO" allowsAnimatedImages="NO" allowsAnimatedImageLooping="NO">
                             <nil key="identifier"/>

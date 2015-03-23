@@ -3,7 +3,7 @@ import WebKit
 
 class Document: NSDocument {
 
-    @IBOutlet weak var webView: WebView!
+    @IBOutlet weak var webView: FreedrawView!
 
     var native: Native?
     var hooks: JSValue?
@@ -17,6 +17,7 @@ class Document: NSDocument {
     override func windowControllerDidLoadNib(windowController: NSWindowController) {
         super.windowControllerDidLoadNib(windowController)
         if let url = NSBundle.mainBundle().URLForResource("main", withExtension: "html", subdirectory: "core") {
+            webView.document = self
             webView.drawsBackground = false
             webView.frameLoadDelegate = self
             webView.mainFrame.loadRequest(NSURLRequest(URL: url))
