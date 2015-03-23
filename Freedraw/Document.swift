@@ -108,6 +108,13 @@ extension Document {
 extension Document {
 
     @objc
+    func jsAction(sender: AnyObject?) {
+        if let item = sender as? NSMenuItem {
+            callHook("runCommand", withArguments: [item.representedObject as NSString])
+        }
+    }
+
+    @objc
     func showDeveloperTools(sender: AnyObject?) {
         webView.inspector().show(self)
     }
