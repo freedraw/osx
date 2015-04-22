@@ -6,18 +6,24 @@ public protocol RequireExport: JSExport {
     func require(path: NSString) -> AnyObject
 }
 
-let root: String = NSBundle.mainBundle().pathForResource("core/src", ofType: nil)!
+let root: String = NSBundle.mainBundle().pathForResource("core/node_modules", ofType: nil)!
 var cache: Dictionary<String, AnyObject> = Dictionary()
 
 @objc(Require)
 public class Require: NSObject, RequireExport {
     let path: String
+    let native: Native
 
-    init(path: String) {
+    init(path: String, native: Native) {
         self.path = path
+        self.native = native
     }
 
     public func require(file: NSString) -> AnyObject {
+        if file == "native" {
+            return native
+        }
+
         let fp = file.hasPrefix("./")
             ? path.stringByAppendingPathComponent(file.substringFromIndex(2))
             : root.stringByAppendingPathComponent(file as String)
@@ -25,7 +31,7 @@ public class Require: NSObject, RequireExport {
         var isDirectory: ObjCBool = false
         NSFileManager.defaultManager().fileExistsAtPath(fp, isDirectory: &isDirectory)
 
-        let filePath: String! = isDirectory ? fp.stringByAppendingPathComponent("_index.js") :
+        let filePath: String! = isDirectory ? fp.stringByAppendingPathComponent("index.js") :
             fp.pathExtension == "" ? fp.stringByAppendingPathExtension("js") : fp
 
         if let m: AnyObject = cache[filePath] {
@@ -44,8 +50,8 @@ public class Require: NSObject, RequireExport {
         }
 
         if filePath.pathExtension == "js" {
-            let wrappedSource = "(function(require, exports) {'use strict';\(source! as String);return exports}.call(self, this.require.bind(this), {}))"
-            let req = Require(path: filePath.stringByDeletingLastPathComponent)
+            let wrappedSource = "(function(require, module) {'use strict';var exports = module.exports = {};\(source! as String);return module.exports}.call(self, this.require.bind(this), {}))"
+            let req = Require(path: filePath.stringByDeletingLastPathComponent, native: native)
             let result = context.evaluateScript(wrappedSource, withThisObject: JSValue(object:req, inContext:context), sourceURL: NSURL(fileURLWithPath: filePath), startingLineNumber: 1)
             cache[filePath] = result!
             return result!

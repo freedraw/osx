@@ -12,6 +12,7 @@ public protocol NativeExport: JSExport {
 
     func require(path: NSString) -> AnyObject
 
+    func hooks() -> JSValue
     func done()
 
     func doJSBack()
@@ -20,7 +21,8 @@ public protocol NativeExport: JSExport {
 @objc(Native)
 public class Native: NSObject, NativeExport {
     weak var document: Document?
-    lazy var require: Require = Require(path: NSBundle.mainBundle().pathForResource("core", ofType: nil)!)
+    lazy var require: Require = Require(path: NSBundle.mainBundle().pathForResource("core", ofType: nil)!, native: self)
+    var hooksObject: JSValue?
 
     init(document: Document) {
         self.document = document
@@ -72,6 +74,13 @@ public class Native: NSObject, NativeExport {
     }
 
     // MARK: - Communication with JavaScript
+
+    public func hooks() -> JSValue {
+        if hooksObject == nil {
+            hooksObject = JSValue(newObjectInContext: JSContext.currentContext())
+        }
+        return hooksObject!
+    }
 
     public func done() {
         document?.jsDone()
