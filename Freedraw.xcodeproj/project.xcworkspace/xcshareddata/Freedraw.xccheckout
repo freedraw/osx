@@ -7,7 +7,7 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1DC6E416-0A93-416C-81DB-19D4F6CF883D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Freedraw</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>70540B9752311044FB903145E00D8024FFDD847B</key>
@@ -16,7 +16,7 @@
 		<string>https://github.com/freedraw/core.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Freedraw.xcodeproj</string>
+	<string>Freedraw.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>70540B9752311044FB903145E00D8024FFDD847B</key>
