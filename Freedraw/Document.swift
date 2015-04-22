@@ -134,7 +134,7 @@ extension Document {
     @objc
     func jsAction(sender: AnyObject?) {
         if let item = sender as? NSMenuItem {
-            callHook("runCommand", withArguments: [item.representedObject as NSString])
+            callHook("runCommand", withArguments: [item.representedObject as! NSString])
         }
     }
 

@@ -20,7 +20,7 @@ public class Require: NSObject, RequireExport {
     public func require(file: NSString) -> AnyObject {
         let fp = file.hasPrefix("./")
             ? path.stringByAppendingPathComponent(file.substringFromIndex(2))
-            : root.stringByAppendingPathComponent(file)
+            : root.stringByAppendingPathComponent(file as String)
 
         var isDirectory: ObjCBool = false
         NSFileManager.defaultManager().fileExistsAtPath(fp, isDirectory: &isDirectory)
