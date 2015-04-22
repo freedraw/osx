@@ -46,6 +46,7 @@ public class Require: NSObject, RequireExport {
         if filePath.pathExtension == "js" {
             let wrappedSource = join("\n", [
                 "(function(require, exports) {",
+                "'use strict';",
                 source! as String,
                 ";return exports",
                 "}.call(self, this.require.bind(this), {}))"
