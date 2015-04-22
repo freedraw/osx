@@ -44,15 +44,9 @@ public class Require: NSObject, RequireExport {
         }
 
         if filePath.pathExtension == "js" {
-            let wrappedSource = join("\n", [
-                "(function(require, exports) {",
-                "'use strict';",
-                source! as String,
-                ";return exports",
-                "}.call(self, this.require.bind(this), {}))"
-            ])
+            let wrappedSource = "(function(require, exports) {'use strict';\(source! as String);return exports}.call(self, this.require.bind(this), {}))"
             let req = Require(path: filePath.stringByDeletingLastPathComponent)
-            let result = context.evaluateScript(wrappedSource, withThisObject: JSValue(object:req, inContext:context), sourceURL: NSURL(fileURLWithPath: filePath), startingLineNumber: -2)
+            let result = context.evaluateScript(wrappedSource, withThisObject: JSValue(object:req, inContext:context), sourceURL: NSURL(fileURLWithPath: filePath), startingLineNumber: 1)
             cache[filePath] = result!
             return result!
         }
