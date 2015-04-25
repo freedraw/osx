@@ -6,7 +6,6 @@ class Document: NSDocument {
     @IBOutlet weak var webView: FreedrawView!
 
     var native: Native?
-    var hooks: JSValue?
     var jsLoadedFile = false
 
     override init() {
@@ -33,10 +32,8 @@ class Document: NSDocument {
     override func webView(sender: WebView!, didCommitLoadForFrame frame: WebFrame!) {
         Require.clearCache()
         let window = frame.windowObject.JSValue()
-        hooks = JSValue(newObjectInContext: window.context)
-
         window.setValue(native, forProperty: "Native")
-        window.setValue(hooks, forProperty: "Hooks")
+        window.setValue(window, forProperty: "global")
     }
 
     override var windowNibName: String? {
@@ -84,17 +81,10 @@ extension Document {
 extension Document {
 
     func callHook(name: String, withArguments args: [AnyObject], error outError: NSErrorPointer = nil) -> JSValue? {
-        if hooks == nil {
-            if outError != nil {
-                outError.memory = NSError(domain: ErrorDomain, code: ErrorCode.CannotCommunicate.rawValue, userInfo: [
-                    NSLocalizedFailureReasonErrorKey: NSLocalizedString("Cannot communicate with JavaScriptCore.", comment: "")])
-            }
-            return nil
-        }
-        let context = hooks!.context
+        let context = webView.mainFrame.javaScriptContext
         var result: JSValue?
         let exc = native!.doJS {
-            result = self.hooks!.invokeMethod(name, withArguments: args)
+            result = self.native!.hooks().invokeMethod(name, withArguments: args)
         }
         if exc != nil {
             if outError != nil {

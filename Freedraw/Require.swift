@@ -31,8 +31,19 @@ public class Require: NSObject, RequireExport {
         var isDirectory: ObjCBool = false
         NSFileManager.defaultManager().fileExistsAtPath(fp, isDirectory: &isDirectory)
 
-        let filePath: String! = isDirectory ? fp.stringByAppendingPathComponent("index.js") :
-            fp.pathExtension == "" ? fp.stringByAppendingPathExtension("js") : fp
+        let filePath: String!
+        if isDirectory {
+            let main: String
+            if let data = NSData(contentsOfFile: fp.stringByAppendingPathComponent("package.json")),
+                json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: .allZeros, error: nil) as? NSDictionary {
+                main = (json.objectForKey("main") as! String?) ?? "index.js"
+            } else {
+                main = "index.js"
+            }
+            filePath = fp.stringByAppendingPathComponent(main)
+        } else {
+            filePath = fp.pathExtension == "" ? fp.stringByAppendingPathExtension("js") : fp
+        }
 
         if let m: AnyObject = cache[filePath] {
             return m

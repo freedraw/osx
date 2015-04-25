@@ -9,6 +9,7 @@ public protocol NativeExport: JSExport {
     func popCursor()
 
     func showConsole()
+    func log(s: NSString)
 
     func require(path: NSString) -> AnyObject
 
@@ -21,7 +22,7 @@ public protocol NativeExport: JSExport {
 @objc(Native)
 public class Native: NSObject, NativeExport {
     weak var document: Document?
-    lazy var require: Require = Require(path: NSBundle.mainBundle().pathForResource("core", ofType: nil)!, native: self)
+    lazy var require: Require = Require(path: NSBundle.mainBundle().pathForResource("core/node_modules/fd", ofType: nil)!, native: self)
     var hooksObject: JSValue?
 
     init(document: Document) {
@@ -67,6 +68,10 @@ public class Native: NSObject, NativeExport {
 
     public func showConsole() {
         document?.webView.inspector().showConsole(self)
+    }
+
+    public func log(s: NSString) {
+        println(s)
     }
 
     public func require(path: NSString) -> AnyObject {
